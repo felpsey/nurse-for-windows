@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Diagnostics;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
@@ -45,8 +46,13 @@ namespace Nurse.Desktop
         {
             m_window = new MainWindow();
             m_window.Activate();
-        }
+
+            example = new Class1();
+
+            Debug.WriteLine("Example " + example.example());
+    }
 
         private Window m_window;
+        private Class1 example;
     }
 }

@@ -6,9 +6,35 @@
     xmlns:local="using:Nurse.Desktop"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:winui="using:Microsoft.UI.Xaml"
+    mc:Ignorable="d"
+    Title="Nurse for Windows">
 
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Button x:Name="myButton" Click="myButton_Click">Click Me</Button>
-    </StackPanel>
+  <NavigationView IsBackButtonVisible="Collapsed" IsTitleBarAutoPaddingEnabled="False">
+    <NavigationView.MenuItems>
+      <NavigationViewItem Content="System">
+        <NavigationViewItem.Icon>
+          <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE770;"/>
+        </NavigationViewItem.Icon>
+      </NavigationViewItem>
+      <NavigationViewItem Content="Tests">
+        <NavigationViewItem.Icon>
+          <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xF0E3;"/>
+        </NavigationViewItem.Icon>
+      </NavigationViewItem>
+      <NavigationViewItem Content="Reports">
+        <NavigationViewItem.Icon>
+          <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xF12B;"/>
+        </NavigationViewItem.Icon>
+      </NavigationViewItem>
+      <NavigationViewItem Content="History">
+        <NavigationViewItem.Icon>
+          <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE81C;"/>
+        </NavigationViewItem.Icon>
+      </NavigationViewItem>
+    </NavigationView.MenuItems>
+
+    <Frame x:Name="ContentFrame"/>
+  </NavigationView>
 </Window>
