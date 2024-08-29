@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Nurse.Desktop (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Nurse.Desktop (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
