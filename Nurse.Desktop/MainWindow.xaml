@@ -11,16 +11,21 @@
     mc:Ignorable="d"
     Title="Nurse for Windows">
 
-  <NavigationView IsBackButtonVisible="Collapsed" IsTitleBarAutoPaddingEnabled="False">
+  <NavigationView x:Name="NavigationViewControl" IsBackButtonVisible="Collapsed" IsTitleBarAutoPaddingEnabled="False">
     <NavigationView.MenuItems>
       <NavigationViewItem Content="System">
         <NavigationViewItem.Icon>
           <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE770;"/>
         </NavigationViewItem.Icon>
       </NavigationViewItem>
-      <NavigationViewItem Content="Tests">
+      <NavigationViewItem Content="Inventory">
         <NavigationViewItem.Icon>
           <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xF0E3;"/>
+        </NavigationViewItem.Icon>
+      </NavigationViewItem>
+      <NavigationViewItem Content="Tests">
+        <NavigationViewItem.Icon>
+          <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xEB51;"/>
         </NavigationViewItem.Icon>
       </NavigationViewItem>
       <NavigationViewItem Content="Reports">

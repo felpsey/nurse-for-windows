@@ -1,4 +1,6 @@
-﻿using Microsoft.UI.Xaml;
+﻿using Microsoft.UI;
+using Microsoft.UI.Windowing;
+using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
 using Microsoft.UI.Xaml.Data;
@@ -35,7 +37,9 @@ namespace Nurse.Desktop
         /// </summary>
         public App()
         {
-            this.InitializeComponent();
+            InitializeComponent();
+
+
         }
 
         /// <summary>
@@ -46,13 +50,8 @@ namespace Nurse.Desktop
         {
             m_window = new MainWindow();
             m_window.Activate();
-
-            example = new Class1();
-
-            Debug.WriteLine("Example " + example.example());
-    }
+        }
 
         private Window m_window;
-        private Class1 example;
     }
 }

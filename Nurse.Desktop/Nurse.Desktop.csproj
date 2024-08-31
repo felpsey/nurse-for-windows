@@ -15,6 +15,9 @@
     <SelfContained>true</SelfContained>
     <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
   </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Views\HomePage.xaml" />
+  </ItemGroup>
 
   <ItemGroup>
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -27,7 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.756" />
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.1" />
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240802000" />
     <Manifest Include="$(ApplicationManifest)" />
   </ItemGroup>
@@ -44,8 +47,11 @@
     <ProjectReference Include="..\Nurse.Core\Nurse.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Pages\" />
+    <Page Update="Views\HomePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
+
 
   <!--
     Defining the "HasPackageAndPublishMenuAddedByProject" property here allows the Solution
