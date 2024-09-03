@@ -33,5 +33,10 @@ namespace Nurse.Desktop
 
 			ExtendsContentIntoTitleBar = true;
 		}
+
+        public string GetAppTitle()
+        {
+            return "Nurse Desktop";
+		}
 	}
 }

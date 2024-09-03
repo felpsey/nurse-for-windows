@@ -46,11 +46,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Nurse.Core\Nurse.Core.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Page Update="Views\HomePage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
 
 
   <!--
