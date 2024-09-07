@@ -42,7 +42,6 @@
 
 		<NavigationView
 			x:Name="NavigationViewControl"
-			IsBackButtonVisible="Collapsed"
 			IsTitleBarAutoPaddingEnabled="False"
 			AlwaysShowHeader="True"
 			Header="Default Header"
@@ -56,7 +55,7 @@
 							<ColumnDefinition/>
 						</Grid.ColumnDefinitions>
 
-						<Grid x:Name="PageTitle"
+						<Grid x:Name="pageTitle"
 							Background="Transparent"
 							Height="44"
 							VerticalAlignment="Top">
