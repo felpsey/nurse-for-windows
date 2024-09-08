@@ -27,11 +27,14 @@
 				<TextBlock Text="{x:Bind Hostname}" Grid.Row="0" Grid.Column="1" Padding="20,20,0,20" />
 
 				<Border Background="#222" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" Padding="20,20,0,20">
-					<TextBlock Text="Data 1" />
+					<TextBlock Text="Windows Version" FontWeight="Bold" />
 				</Border>
 				<Border Background="#222" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" Padding="20,20,0,20">
-					<TextBlock Text="Data 2" />
+					<TextBlock Text="{x:Bind WindowsVersion}" />
 				</Border>
+
+				<TextBlock Text="Windows Product Type" FontWeight="Bold" Grid.Row="2" Grid.Column="0" Padding="20,20,0,20" />
+				<TextBlock Text="{x:Bind WindowsProductType}" Grid.Row="2" Grid.Column="1" Padding="20,20,0,20" />
 			</Grid>
 		</Border>
 	</Grid>
