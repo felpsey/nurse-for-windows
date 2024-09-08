@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Nurse.Desktop.Views
 {
-	public sealed partial class HomePage : Page
+	public sealed partial class SystemPage : Page
 	{
-		public HomePage()
+		public SystemPage()
 		{
 			this.InitializeComponent();
 		}

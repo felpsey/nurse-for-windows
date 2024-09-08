@@ -37,15 +37,17 @@
 				Grid.Column="1"
 				VerticalAlignment="Center"
 				Style="{StaticResource CaptionTextBlockStyle}"
-				Text="{x:Bind GetAppTitle()}" />
+				Text="Nurse for Desktop" />
 		</Grid>
 
 		<NavigationView
 			x:Name="NavigationViewControl"
 			IsTitleBarAutoPaddingEnabled="False"
 			AlwaysShowHeader="True"
-			Header="Default Header"
-			IsTabStop="False">
+			Header="System"
+			IsTabStop="False"
+            BackRequested="NavigationViewControl_BackRequested" 
+            ItemInvoked="NavigationViewControl_ItemInvoked">
 
 			<NavigationView.HeaderTemplate>
 				<DataTemplate>
@@ -71,38 +73,38 @@
 			</NavigationView.HeaderTemplate>
 			
 			<NavigationView.MenuItems>
-				<NavigationViewItem Content="System">
+				<NavigationViewItem Content="System" Tag="Nurse.Desktop.Views.SystemPage">
 					<NavigationViewItem.Icon>
 						<FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE770;" />
 					</NavigationViewItem.Icon>
 				</NavigationViewItem>
 
-				<NavigationViewItem Content="Inventory">
+				<NavigationViewItem Content="Inventory" Tag="Nurse.Desktop.Views.InventoryPage">
 					<NavigationViewItem.Icon>
 						<FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xF0E3;" />
 					</NavigationViewItem.Icon>
 				</NavigationViewItem>
 
-				<NavigationViewItem Content="Tests">
+				<NavigationViewItem Content="Tests" Tag="Nurse.Desktop.Views.TestsPage">
 					<NavigationViewItem.Icon>
 						<FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xEB51;" />
 					</NavigationViewItem.Icon>
 				</NavigationViewItem>
 
-				<NavigationViewItem Content="Reports">
+				<NavigationViewItem Content="Reports" Tag="Nurse.Desktop.Views.ReportsPage">
 					<NavigationViewItem.Icon>
 						<FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xF12B;" />
 					</NavigationViewItem.Icon>
 				</NavigationViewItem>
 
-				<NavigationViewItem Content="History">
+				<NavigationViewItem Content="History" Tag="Nurse.Desktop.Views.HistoryPage">
 					<NavigationViewItem.Icon>
 						<FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE81C;" />
 					</NavigationViewItem.Icon>
 				</NavigationViewItem>
 			</NavigationView.MenuItems>
 
-			<Frame x:Name="ContentFrame" Padding="55,10,0,0" />
+			<Frame x:Name="ContentFrame" Navigated="ContentFrame_Navigated" Padding="55,10,0,0" />
 		</NavigationView>
 	</Grid>
 </Window>
