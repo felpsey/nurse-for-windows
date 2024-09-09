@@ -9,6 +9,12 @@
     mc:Ignorable="d">
 
 	<Grid>
-		<TextBlock x:Name="PageTitle"  Text="Settings"/>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		
+		<TextBlock Grid.Row="0">Nurse for Desktop Version 1.0.0</TextBlock>
+		<TextBlock Grid.Row="1">By Ethan Phelps</TextBlock>
 	</Grid>
 </Page>

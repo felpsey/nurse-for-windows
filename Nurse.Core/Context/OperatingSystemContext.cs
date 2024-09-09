@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net.NetworkInformation;
 
 using Nurse.Core.Context.Enums;
 
@@ -12,37 +13,32 @@ namespace Nurse.Core.Context
     public class OperatingSystemContext : SystemContext
     {
 		private readonly Version _Version;
+		private readonly IPGlobalProperties _NetworkInformation;
+
         private readonly string _Hostname;
         private readonly string _WindowsProductType;
 		private readonly string _WindowsVersion;
+		private readonly string _WindowsDomainName;
 
         public OperatingSystemContext()
         {
 			_Version = Environment.OSVersion.Version;
-            _Hostname = Environment.MachineName;
+			_NetworkInformation = IPGlobalProperties.GetIPGlobalProperties();
+			_Hostname = Environment.MachineName;
 			_WindowsProductType = GetWindowsProductType();
-			_WindowsVersion = _Version.Major.ToString() + "." + _Version.Minor.ToString() + "." + _Version.Build.ToString();
+			_WindowsVersion = _Version.ToString();
+			_WindowsDomainName = GetWindowsDomainName();
 		}
 
-		private Version Version
-		{
-			get { return _Version; }
-		}
+		private Version Version { get { return _Version; } }
 
-		public string Hostname
-        {
-            get { return _Hostname; }
-        }
+		public string Hostname { get { return _Hostname; } }
 
-		public string WindowsProductType
-		{
-			get { return _WindowsProductType; }
-		}
+		public string WindowsProductType { get { return _WindowsProductType; } }
 
-		public string WindowsVersion
-		{
-			get { return _WindowsVersion; }
-		}
+		public string WindowsVersion { get { return _WindowsVersion; } }
+
+		public string WindowsDomainName { get { return _WindowsDomainName; } }
 
 		private string GetWindowsProductType()
         {
@@ -68,11 +64,11 @@ namespace Nurse.Core.Context
 		}
 
 		[DllImport("kernel32.dll")]
-		private static extern bool GetProductInfo(
-			int dwOSMajorVersion,
-			int dwOSMinorVersion,
-			int dwSpMajorVersion,
-			int dwSpMinorVersion,
-			out uint pdwReturnedProductType);
+		private static extern bool GetProductInfo(int dwOSMajorVersion, int dwOSMinorVersion, int dwSpMajorVersion, int dwSpMinorVersion, out uint pdwReturnedProductType);
+
+		private string GetWindowsDomainName()
+		{
+			return _NetworkInformation.DomainName;
+		}
 	}
 }
