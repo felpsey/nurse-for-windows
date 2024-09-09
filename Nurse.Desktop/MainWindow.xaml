@@ -87,7 +87,7 @@
 
 				<NavigationViewItem Content="Tests" Tag="Nurse.Desktop.Views.TestsPage">
 					<NavigationViewItem.Icon>
-						<FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xEB51;" />
+						<FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE95E;" />
 					</NavigationViewItem.Icon>
 				</NavigationViewItem>
 
