@@ -1,9 +1,12 @@
-﻿using Nurse.Core.Context;
+﻿using Microsoft.UI.Dispatching;
+using Microsoft.UI.Xaml;
+using Nurse.Core.Context;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
@@ -15,7 +18,8 @@ namespace Nurse.Desktop.ViewModels
 		public event PropertyChangedEventHandler PropertyChanged;
 
 		private OperatingSystemContext _OperatingSystemContext;
-		private Timer _timer;
+		private DispatcherTimer _timer;
+
 		private string _uptime;
 
 		public SystemViewModel()
@@ -27,10 +31,10 @@ namespace Nurse.Desktop.ViewModels
 			WindowsProductType = _OperatingSystemContext.WindowsProductType;
 			WindowsDomainName = _OperatingSystemContext.WindowsDomainName;
 
-			_timer = new Timer(1000);
-			_timer.Elapsed += OnTimerElapsed;
-			_timer.AutoReset = true;
+			_timer = new DispatcherTimer();
+			_timer.Tick += (s, e) => { UpdateUptime(); };
 			_timer.Start();
+
 		}
 
 		public string Hostname { get; }
@@ -43,11 +47,12 @@ namespace Nurse.Desktop.ViewModels
 			private set
 			{
 				_uptime = value;
-				RaisePropertyChanged("Uptime");
+
+				OnPropertyChanged();
 			}
 		}
 
-		private void OnTimerElapsed(object sender, ElapsedEventArgs e)
+		private void UpdateUptime()
 		{
 			TimeSpan currentTime = OperatingSystemContext.GetUptime();
 
@@ -55,11 +60,9 @@ namespace Nurse.Desktop.ViewModels
 		}
 
 		// Notify the view when a property changes
-		protected void RaisePropertyChanged(string name)
+		protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
 		{
-			Debug.Print("Property changed! " + name);
-
-			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 		}
 	}
 }
