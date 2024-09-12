@@ -70,5 +70,17 @@ namespace Nurse.Core.Context
 		{
 			return _NetworkInformation.DomainName;
 		}
+		
+		public static TimeSpan GetUptime()
+		{
+			// Get system uptime in milliseconds
+			long uptimeMilliseconds = Environment.TickCount64;
+
+			// Convert to TimeSpan for easier reading
+			TimeSpan uptime = TimeSpan.FromMilliseconds(uptimeMilliseconds);
+
+			return uptime;
+		}
+
 	}
 }

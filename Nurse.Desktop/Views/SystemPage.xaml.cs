@@ -20,6 +20,8 @@ namespace Nurse.Desktop.Views
 			this.InitializeComponent();
 
 			ViewModel = new SystemViewModel();
+
+			this.DataContext = ViewModel;
 		}
 	}
 }

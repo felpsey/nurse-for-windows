@@ -24,9 +24,10 @@
 						<RowDefinition Height="Auto"/>
 						<RowDefinition Height="Auto"/>
 						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
 					</Grid.RowDefinitions>
 
-					<TextBlock Text="Device Name" FontWeight="Bold" Grid.Row="0" Grid.Column="0" Padding="20,20,0,20" />
+					<TextBlock Text="System Name" FontWeight="Bold" Grid.Row="0" Grid.Column="0" Padding="20,20,0,20" />
 					<TextBlock Text="{x:Bind ViewModel.Hostname}" Grid.Row="0" Grid.Column="1" Padding="20,20,0,20" />
 
 					<Border Background="#222" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" Padding="20,20,0,20">
@@ -45,6 +46,9 @@
 					<Border Background="#222" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="1" Padding="20,20,0,20">
 						<TextBlock Text="{x:Bind ViewModel.WindowsDomainName}" />
 					</Border>
+
+					<TextBlock Text="System Uptime" FontWeight="Bold" Grid.Row="4" Grid.Column="0" Padding="20,20,0,20" />
+					<TextBlock Text="{x:Bind ViewModel.Uptime}" Grid.Row="4" Grid.Column="1" Padding="20,20,0,20" />
 				</Grid>
 			</ScrollViewer>
 		</Border>
