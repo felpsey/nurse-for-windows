@@ -50,6 +50,8 @@ namespace Nurse.Desktop
         {
             m_window = new MainWindow();
             m_window.Activate();
+
+            Init.Main();
         }
 
         private Window m_window;

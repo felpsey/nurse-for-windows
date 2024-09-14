@@ -97,11 +97,11 @@
 					</NavigationViewItem.Icon>
 				</NavigationViewItem>
 
-				<NavigationViewItem Content="History" Tag="Nurse.Desktop.Views.HistoryPage">
+				<!--<NavigationViewItem Content="History" Tag="Nurse.Desktop.Views.HistoryPage">
 					<NavigationViewItem.Icon>
 						<FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE81C;" />
 					</NavigationViewItem.Icon>
-				</NavigationViewItem>
+				</NavigationViewItem>-->
 			</NavigationView.MenuItems>
 
 			<Frame x:Name="ContentFrame" Navigated="ContentFrame_Navigated" Padding="55,10,0,0" />

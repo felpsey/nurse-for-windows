@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nurse.Core.Context
+namespace Nurse.Core
 {
-	public abstract class SystemContext
+	public class ReportInfo
 	{
-
+		public string Name { get; set; }
+		public string FullPath { get; set; }
 	}
 }

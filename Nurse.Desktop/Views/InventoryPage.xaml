@@ -7,17 +7,23 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-	<StackPanel>
+	<Grid>
 		<Border BorderBrush="#222" BorderThickness="1" CornerRadius="5" Margin="0,25,45,45">
-			<ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-				<StackPanel>
-					<ProgressRing IsActive="{x:Bind ViewModel.IsLoading, Mode=OneWay}" 
-                          Visibility="{x:Bind ViewModel.LoadingVisibility, Mode=OneWay}" 
-                          HorizontalAlignment="Center" 
-                          VerticalAlignment="Center"
-						  Padding="25,25,25,25"/>
+			<ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Auto">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="*" />
+					</Grid.RowDefinitions>
 
-					<Grid>
+					<ProgressRing IsActive="{x:Bind ViewModel.IsLoading, Mode=OneWay}" 
+                        Visibility="{x:Bind ViewModel.LoadingVisibility, Mode=OneWay}" 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center"
+						Margin="25,25,25,25"
+						Grid.Row="0"/>
+
+					<Grid Grid.Row="1" Visibility="{x:Bind ViewModel.ResultVisibility, Mode=OneWay}">
 						<Grid.ColumnDefinitions>
 							<ColumnDefinition Width="Auto"/>
 							<ColumnDefinition Width="*"/>
@@ -27,47 +33,176 @@
 							<RowDefinition Height="Auto"/>
 							<RowDefinition Height="Auto"/>
 							<RowDefinition Height="Auto"/>
-
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
 						</Grid.RowDefinitions>
 
-						<TextBlock Text="OS Name" FontWeight="Bold" Grid.Row="0" Grid.Column="0" Padding="20,20,0,20" Visibility="{x:Bind ViewModel.ResultVisibility, Mode=OneWay}" />
-						<TextBlock Text="{x:Bind ViewModel.OSName, Mode=OneWay}" Grid.Row="0" Grid.Column="1" Padding="20,20,0,20" Visibility="{x:Bind ViewModel.ResultVisibility, Mode=OneWay}" />
+						<TextBlock Text="OS Name" FontWeight="Bold" Grid.Row="0" Grid.Column="0" Padding="20,20,0,20" />
+						<TextBlock Text="{x:Bind ViewModel.OSName, Mode=OneWay}" Grid.Row="0" Grid.Column="1" Padding="20,20,0,20" />
 
-						<Border Background="#222" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" Padding="20,20,0,20" Visibility="{x:Bind ViewModel.ResultVisibility, Mode=OneWay}">
+						<Border Background="#222" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" Padding="20,20,0,20">
 							<TextBlock Text="Windows Edition" FontWeight="Bold" />
 						</Border>
-						<Border Background="#222" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" Padding="20,20,0,20" Visibility="{x:Bind ViewModel.ResultVisibility, Mode=OneWay}">
+						<Border Background="#222" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" Padding="20,20,0,20">
 							<TextBlock Text="{x:Bind ViewModel.WindowsEdition, Mode=OneWay}" />
 						</Border>
 
-						<TextBlock Text="Windows Install Date" FontWeight="Bold" Grid.Row="2" Grid.Column="0" Padding="20,20,0,20" Visibility="{x:Bind ViewModel.ResultVisibility, Mode=OneWay}" />
-						<TextBlock Text="{x:Bind ViewModel.WindowsInstallDate, Mode=OneWay}" Grid.Row="2" Grid.Column="1" Padding="20,20,0,20" Visibility="{x:Bind ViewModel.ResultVisibility, Mode=OneWay}" />
+						<TextBlock Text="Windows Install Date" FontWeight="Bold" Grid.Row="2" Grid.Column="0" Padding="20,20,0,20" />
+						<TextBlock Text="{x:Bind ViewModel.WindowsInstallDate, Mode=OneWay}" Grid.Row="2" Grid.Column="1" Padding="20,20,0,20" />
+
+						<Border Background="#222" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="1" Padding="20,20,0,20">
+							<TextBlock Text="Windows System Root" FontWeight="Bold" />
+						</Border>
+						<Border Background="#222" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="1" Padding="20,20,0,20">
+							<TextBlock Text="{x:Bind ViewModel.WindowsSystemRoot, Mode=OneWay}" />
+						</Border>
+
+						<TextBlock Text="BIOS Version" FontWeight="Bold" Grid.Row="4" Grid.Column="0" Padding="20,20,0,20" />
+						<TextBlock Text="{x:Bind ViewModel.BIOSVersion, Mode=OneWay}" Grid.Row="4" Grid.Column="1" Padding="20,20,0,20" />
+
+						<Border Background="#222" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="1" Padding="20,20,0,20">
+							<TextBlock Text="BIOS Firmware Type" FontWeight="Bold" />
+						</Border>
+						<Border Background="#222" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="1" Padding="20,20,0,20">
+							<TextBlock Text="{x:Bind ViewModel.BIOSFirmwareType, Mode=OneWay}" />
+						</Border>
+
+						<TextBlock Text="BIOS Manufacturer" FontWeight="Bold" Grid.Row="6" Grid.Column="0" Padding="20,20,0,20" />
+						<TextBlock Text="{x:Bind ViewModel.BIOSManufacturer, Mode=OneWay}" Grid.Row="6" Grid.Column="1" Padding="20,20,0,20" />
+
+						<Border Background="#222" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="1" Padding="20,20,0,20">
+							<TextBlock Text="BIOS Release Date" FontWeight="Bold" />
+						</Border>
+						<Border Background="#222" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="1" Padding="20,20,0,20">
+							<TextBlock Text="{x:Bind ViewModel.BIOSReleaseDate, Mode=OneWay}" />
+						</Border>
+
+						<TextBlock Text="Windows Domain" FontWeight="Bold" Grid.Row="8" Grid.Column="0" Padding="20,20,0,20" />
+						<TextBlock Text="{x:Bind ViewModel.WindowsDomain, Mode=OneWay}" Grid.Row="8" Grid.Column="1" Padding="20,20,0,20" />
+
+						<Border Background="#222" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="1" Padding="20,20,0,20">
+							<TextBlock Text="System Manufacturer" FontWeight="Bold" />
+						</Border>
+						<Border Background="#222" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="1" Padding="20,20,0,20">
+							<TextBlock Text="{x:Bind ViewModel.SystemManufacturer, Mode=OneWay}" />
+						</Border>
+
+						<TextBlock Text="System Family" FontWeight="Bold" Grid.Row="10" Grid.Column="0" Padding="20,20,0,20" />
+						<TextBlock Text="{x:Bind ViewModel.SystemFamily, Mode=OneWay}" Grid.Row="10" Grid.Column="1" Padding="20,20,0,20" />
+
+						<Border Background="#222" Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="1" Padding="20,20,0,20">
+							<TextBlock Text="System Model" FontWeight="Bold" />
+						</Border>
+						<Border Background="#222" Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="1" Padding="20,20,0,20">
+							<TextBlock Text="{x:Bind ViewModel.SystemModel, Mode=OneWay}" />
+						</Border>
+
+						<TextBlock Text="Number of Logical Processors" FontWeight="Bold" Grid.Row="12" Grid.Column="0" Padding="20,20,0,20" />
+						<TextBlock Text="{x:Bind ViewModel.NumberOfLogicalProcessors, Mode=OneWay}" Grid.Row="12" Grid.Column="1" Padding="20,20,0,20" />
+
+						<Border Background="#222" Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="1" Padding="20,20,0,20">
+							<TextBlock Text="Number of Processors" FontWeight="Bold" />
+						</Border>
+						<Border Background="#222" Grid.Row="13" Grid.Column="1" Grid.ColumnSpan="1" Padding="20,20,0,20">
+							<TextBlock Text="{x:Bind ViewModel.NumberOfProcessors, Mode=OneWay}" />
+						</Border>
+
+						<TextBlock Text="Processors" FontWeight="Bold" Grid.Row="14" Grid.Column="0" Padding="20,20,0,20" />
+						<TextBlock Text="Intel(R) Core(TM) i5-8500T CPU @ 2.10GHz" Grid.Row="14" Grid.Column="1" Padding="20,20,0,20" />
+
+						<Border Background="#222" Grid.Row="15" Grid.Column="0" Grid.ColumnSpan="1" Padding="20,20,0,20">
+							<TextBlock Text="System Type" FontWeight="Bold" />
+						</Border>
+						<Border Background="#222" Grid.Row="15" Grid.Column="1" Grid.ColumnSpan="1" Padding="20,20,0,20">
+							<TextBlock Text="{x:Bind ViewModel.SystemType, Mode=OneWay}" />
+						</Border>
+
+						<TextBlock Text="System Architecture" FontWeight="Bold" Grid.Row="16" Grid.Column="0" Padding="20,20,0,20" />
+						<TextBlock Text="{x:Bind ViewModel.SystemArchitecture, Mode=OneWay}" Grid.Row="16" Grid.Column="1" Padding="20,20,0,20" />
+
+						<Border Background="#222" Grid.Row="17" Grid.Column="0" Grid.ColumnSpan="1" Padding="20,20,0,20">
+							<TextBlock Text="Total Physical Memory" FontWeight="Bold" />
+						</Border>
+						<Border Background="#222" Grid.Row="17" Grid.Column="1" Grid.ColumnSpan="1" Padding="20,20,0,20">
+							<TextBlock Text="{x:Bind ViewModel.TotalPhysicalMemory, Mode=OneWay}" />
+						</Border>
+
+						<TextBlock Text="OS Boot Device" FontWeight="Bold" Grid.Row="18" Grid.Column="0" Padding="20,20,0,20" />
+						<TextBlock Text="{x:Bind ViewModel.OSBootDevice, Mode=OneWay}" Grid.Row="18" Grid.Column="1" Padding="20,20,0,20" />
+
+						<Border Background="#222" Grid.Row="19" Grid.Column="0" Grid.ColumnSpan="1" Padding="20,20,0,20">
+							<TextBlock Text="OS System Device" FontWeight="Bold" />
+						</Border>
+						<Border Background="#222" Grid.Row="19" Grid.Column="1" Grid.ColumnSpan="1" Padding="20,20,0,20">
+							<TextBlock Text="{x:Bind ViewModel.OSSystemDevice, Mode=OneWay}" />
+						</Border>
+
+						<TextBlock Text="OS System Directory" FontWeight="Bold" Grid.Row="20" Grid.Column="0" Padding="20,20,0,20" />
+						<TextBlock Text="{x:Bind ViewModel.OSSystemDirectory, Mode=OneWay}" Grid.Row="20" Grid.Column="1" Padding="20,20,0,20" />
+
+						<Border Background="#222" Grid.Row="21" Grid.Column="0" Grid.ColumnSpan="1" Padding="20,20,0,20">
+							<TextBlock Text="OS System Drive" FontWeight="Bold" />
+						</Border>
+						<Border Background="#222" Grid.Row="21" Grid.Column="1" Grid.ColumnSpan="1" Padding="20,20,0,20">
+							<TextBlock Text="{x:Bind ViewModel.OSSystemDrive, Mode=OneWay}" />
+						</Border>
+
+						<TextBlock Text="OS Windows Directory" FontWeight="Bold" Grid.Row="22" Grid.Column="0" Padding="20,20,0,20" />
+						<TextBlock Text="{x:Bind ViewModel.OSWindowsDirectory, Mode=OneWay}" Grid.Row="22" Grid.Column="1" Padding="20,20,0,20" />
+
+						<Border Background="#222" Grid.Row="23" Grid.Column="0" Grid.ColumnSpan="1" Padding="20,20,0,20">
+							<TextBlock Text="OS Last Boot Up Time" FontWeight="Bold" />
+						</Border>
+						<Border Background="#222" Grid.Row="23" Grid.Column="1" Grid.ColumnSpan="1" Padding="20,20,0,20">
+							<TextBlock Text="{x:Bind ViewModel.OSLastBootUpTime, Mode=OneWay}" />
+						</Border>
+
+						<TextBlock Text="OS Install Date" FontWeight="Bold" Grid.Row="24" Grid.Column="0" Padding="20,20,0,20" />
+						<TextBlock Text="{x:Bind ViewModel.OSInstallDate, Mode=OneWay}" Grid.Row="24" Grid.Column="1" Padding="20,20,0,20" />
+
+						<Border Background="#222" Grid.Row="25" Grid.Column="0" Grid.ColumnSpan="1" Padding="20,20,0,20">
+							<TextBlock Text="OS Language" FontWeight="Bold" />
+						</Border>
+						<Border Background="#222" Grid.Row="25" Grid.Column="1" Grid.ColumnSpan="1" Padding="20,20,0,20">
+							<TextBlock Text="{x:Bind ViewModel.OSLanguage, Mode=OneWay}" />
+						</Border>
+
+						<TextBlock Text="Logon Server" FontWeight="Bold" Grid.Row="26" Grid.Column="0" Padding="20,20,0,20" />
+						<TextBlock Text="{x:Bind ViewModel.LogonServer, Mode=OneWay}" Grid.Row="26" Grid.Column="1" Padding="20,20,0,20" />
+
+						<Border Background="#222" Grid.Row="27" Grid.Column="0" Grid.ColumnSpan="1" Padding="20,20,0,20">
+							<TextBlock Text="OS Version" FontWeight="Bold" />
+						</Border>
+						<Border Background="#222" Grid.Row="27" Grid.Column="1" Grid.ColumnSpan="1" Padding="20,20,0,20">
+							<TextBlock Text="{x:Bind ViewModel.OSVersion, Mode=OneWay}" />
+						</Border>
 					</Grid>
-				</StackPanel>
-			</ScrollViewer>
-		</Border>
-
-		<!--<Border BorderBrush="#222" BorderThickness="1" CornerRadius="5" Margin="0,0,45,45">
-			<ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-				<Grid>
-					--><!-- Loading Spinner --><!--
-					<ProgressRing IsActive="{x:Bind ViewModel.IsLoading, Mode=OneWay}" 
-                          Visibility="{x:Bind ViewModel.LoadingVisibility, Mode=OneWay}" 
-                          HorizontalAlignment="Center" 
-                          VerticalAlignment="Center" />
-
-					--><!-- Display Hostname --><!--
-					<TextBlock Text="{x:Bind ViewModel.OSName, Mode=OneWay}" 
-                       HorizontalAlignment="Center" 
-                       VerticalAlignment="Center" 
-                       Visibility="{x:Bind ViewModel.ResultVisibility, Mode=OneWay}" />
-
-					<TextBlock Text="{x:Bind ViewModel.WindowsEdition, Mode=OneWay}" 
-                       HorizontalAlignment="Center" 
-                       VerticalAlignment="Bottom" 
-                       Visibility="{x:Bind ViewModel.ResultVisibility, Mode=OneWay}" />
 				</Grid>
 			</ScrollViewer>
-		</Border>-->
-	</StackPanel>
+		</Border>
+	</Grid>
 </Page>

@@ -13,8 +13,7 @@
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="Auto"/>
 		</Grid.RowDefinitions>
-		
-		<TextBlock Grid.Row="0">Nurse for Desktop Version 1.0.0</TextBlock>
-		<TextBlock Grid.Row="1">By Ethan Phelps</TextBlock>
+
+		<TextBlock Grid.Row="0">Nurse for Desktop Version 1.0.0 by Ethan Phelps</TextBlock>
 	</Grid>
 </Page>
