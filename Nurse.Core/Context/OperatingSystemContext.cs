@@ -5,7 +5,6 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Net.NetworkInformation;
-
 using Nurse.Core.Context.Enums;
 
 namespace Nurse.Core.Context
@@ -68,6 +67,11 @@ namespace Nurse.Core.Context
 
 		private string GetWindowsDomainName()
 		{
+			if (string.IsNullOrEmpty(_NetworkInformation.DomainName))
+			{
+				return "WORKGROUP";
+			}
+
 			return _NetworkInformation.DomainName;
 		}
 		

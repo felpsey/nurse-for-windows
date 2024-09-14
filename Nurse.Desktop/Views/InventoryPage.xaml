@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <Page
     x:Class="Nurse.Desktop.Views.InventoryPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -8,7 +7,67 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-	<Grid>
-		<TextBlock x:Name="PageTitle"  Text="Inventory"/>
-	</Grid>
+	<StackPanel>
+		<Border BorderBrush="#222" BorderThickness="1" CornerRadius="5" Margin="0,25,45,45">
+			<ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+				<StackPanel>
+					<ProgressRing IsActive="{x:Bind ViewModel.IsLoading, Mode=OneWay}" 
+                          Visibility="{x:Bind ViewModel.LoadingVisibility, Mode=OneWay}" 
+                          HorizontalAlignment="Center" 
+                          VerticalAlignment="Center"
+						  Padding="25,25,25,25"/>
+
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+
+						</Grid.RowDefinitions>
+
+						<TextBlock Text="OS Name" FontWeight="Bold" Grid.Row="0" Grid.Column="0" Padding="20,20,0,20" Visibility="{x:Bind ViewModel.ResultVisibility, Mode=OneWay}" />
+						<TextBlock Text="{x:Bind ViewModel.OSName, Mode=OneWay}" Grid.Row="0" Grid.Column="1" Padding="20,20,0,20" Visibility="{x:Bind ViewModel.ResultVisibility, Mode=OneWay}" />
+
+						<Border Background="#222" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" Padding="20,20,0,20" Visibility="{x:Bind ViewModel.ResultVisibility, Mode=OneWay}">
+							<TextBlock Text="Windows Edition" FontWeight="Bold" />
+						</Border>
+						<Border Background="#222" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" Padding="20,20,0,20" Visibility="{x:Bind ViewModel.ResultVisibility, Mode=OneWay}">
+							<TextBlock Text="{x:Bind ViewModel.WindowsEdition, Mode=OneWay}" />
+						</Border>
+
+						<TextBlock Text="Windows Install Date" FontWeight="Bold" Grid.Row="2" Grid.Column="0" Padding="20,20,0,20" Visibility="{x:Bind ViewModel.ResultVisibility, Mode=OneWay}" />
+						<TextBlock Text="{x:Bind ViewModel.WindowsInstallDate, Mode=OneWay}" Grid.Row="2" Grid.Column="1" Padding="20,20,0,20" Visibility="{x:Bind ViewModel.ResultVisibility, Mode=OneWay}" />
+					</Grid>
+				</StackPanel>
+			</ScrollViewer>
+		</Border>
+
+		<!--<Border BorderBrush="#222" BorderThickness="1" CornerRadius="5" Margin="0,0,45,45">
+			<ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+				<Grid>
+					--><!-- Loading Spinner --><!--
+					<ProgressRing IsActive="{x:Bind ViewModel.IsLoading, Mode=OneWay}" 
+                          Visibility="{x:Bind ViewModel.LoadingVisibility, Mode=OneWay}" 
+                          HorizontalAlignment="Center" 
+                          VerticalAlignment="Center" />
+
+					--><!-- Display Hostname --><!--
+					<TextBlock Text="{x:Bind ViewModel.OSName, Mode=OneWay}" 
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center" 
+                       Visibility="{x:Bind ViewModel.ResultVisibility, Mode=OneWay}" />
+
+					<TextBlock Text="{x:Bind ViewModel.WindowsEdition, Mode=OneWay}" 
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Bottom" 
+                       Visibility="{x:Bind ViewModel.ResultVisibility, Mode=OneWay}" />
+				</Grid>
+			</ScrollViewer>
+		</Border>-->
+	</StackPanel>
 </Page>

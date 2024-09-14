@@ -9,9 +9,7 @@
 	mc:Ignorable="d">
 
 	<Grid>
-		<TextBlock Text="System Context" FontSize="18" />
-
-		<Border BorderBrush="#222" BorderThickness="1" CornerRadius="5" Margin="0,45,45,45">
+		<Border BorderBrush="#222" BorderThickness="1" CornerRadius="5" Margin="0,25,45,45">
 			<ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
 				<Grid>
 					<Grid.ColumnDefinitions>

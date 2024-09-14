@@ -12,6 +12,7 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
+using Nurse.Desktop.ViewModels;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -23,9 +24,21 @@ namespace Nurse.Desktop.Views
     /// </summary>
     public sealed partial class InventoryPage : Page
     {
-        public InventoryPage()
+		public InventoryViewModel ViewModel { get; set; }
+
+		public InventoryPage()
         {
+            // Initialise Page component
             this.InitializeComponent();
-        }
+
+            // Initialise ViewModel
+            ViewModel = new InventoryViewModel();
+
+            // Set the data context of UI elements to the ViewModel
+            this.DataContext = ViewModel;
+
+            // Disable caching
+			this.NavigationCacheMode = NavigationCacheMode.Enabled;
+		}
     }
 }
