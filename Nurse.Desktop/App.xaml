@@ -12,6 +12,9 @@
             </ResourceDictionary.MergedDictionaries>
             <!-- Other app resources here -->
 	        <Thickness x:Key="NavigationViewContentMargin">0,48,0,0</Thickness>
-        </ResourceDictionary>
+			<local:InvertedBooleanConverter x:Key="InvertedBooleanConverter" />
+			<local:BooleanToPassFailConverter x:Key="BooleanToPassFailConverter" />
+			<local:BooleanToColorConverter x:Key="BooleanToColorConverter" />
+		</ResourceDictionary>
     </Application.Resources>
 </Application>

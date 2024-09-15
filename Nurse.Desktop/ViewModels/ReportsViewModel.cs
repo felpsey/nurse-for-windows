@@ -7,7 +7,6 @@ using System.IO;
 
 namespace Nurse.Desktop.ViewModels
 {
-
 	public class ReportsViewModel : INotifyPropertyChanged
 	{
 		public event PropertyChangedEventHandler PropertyChanged;
